@@ -1,0 +1,13 @@
+.searchButton {
+  border-radius: 20px;
+  border: 0ch;
+  padding: 3%;
+  width: 15vw;
+  background-color: tomato;
+  font-size: 1.5em;
+  font-family: "Teko", sans-serif;
+}
+
+.searchButton:hover {
+  cursor: pointer;
+}

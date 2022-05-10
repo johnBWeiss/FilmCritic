@@ -1,0 +1,14 @@
+.title {
+  font-size: 7em;
+  font-family: "Teko", sans-serif;
+  color: azure;
+  margin: 0%;
+}
+
+.titleContainer {
+  /* background-color: black; */
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}

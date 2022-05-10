@@ -1,0 +1,65 @@
+.movieList {
+  font-size: 3em;
+  color: rgb(255, 255, 255);
+  border-radius: 40px;
+  padding: 1%;
+  background-color: black;
+  align-items: center;
+  text-align: center;
+}
+
+p {
+  padding: 1%;
+  margin: 0%;
+  font-size: 0.5em;
+  max-width: 20vw;
+  height: 11vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  border-radius: 30px;
+  width: 20vw;
+  object-fit: contain;
+}
+
+.galleryCompContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 4%;
+}
+
+input {
+  margin-top: 8%;
+  width: 50%;
+  min-width: 30vw;
+  height: 5vh;
+  border-radius: 40px;
+  border: 0;
+  margin-bottom: 5%;
+  padding: 1%;
+  display: flex;
+  align-items: center;
+}
+input::placeholder {
+  font-size: 2em;
+  text-align: center;
+  padding: 2%;
+  font-family: "Teko", sans-serif;
+}
+
+.movieGallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  gap: 30px 30px;
+  margin-left: auto;
+  /* object-fit: contain; */
+}
