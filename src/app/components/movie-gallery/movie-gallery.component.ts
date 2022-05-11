@@ -12,13 +12,26 @@ export class MovieGalleryComponent implements OnInit {
   rawMovieData: any = [];
   movies: any = [];
   results: boolean = true;
+  moreDetails: boolean = false;
+  selectedID: any = [];
   // inputSearch: string = '';
 
   constructor(private movieData: movieService) {
     // this.search = 'two way Binding';
   }
   ngOnInit(): void {}
-
+  moreMovieDetails(id: number) {
+    if (this.selectedID.includes(id)) {
+      this.selectedID = this.selectedID.map((v: any) => {
+        if (v !== id) {
+          return v;
+        }
+      });
+    } else {
+      this.selectedID.push(id);
+    }
+    // this.moreDetails = !this.moreDetails;
+  }
   searchApi() {
     this.movies = this.movieData.getPopularMovies().subscribe((data: any) => {
       this.rawMovieData = data;
