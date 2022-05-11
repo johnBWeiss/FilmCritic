@@ -1,3 +1,10 @@
+.centerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .movieList {
   font-size: 3em;
   color: rgb(255, 255, 255);
@@ -37,21 +44,23 @@ input {
   margin-top: 8%;
   width: 50%;
   min-width: 30vw;
-  height: 5vh;
   border-radius: 40px;
   border: 0;
   margin-bottom: 5%;
-  padding: 1%;
-  display: flex;
-  align-items: center;
+  padding: 3%;
+  /* display: flex; */
+  /* align-items: center; */
 }
 input::placeholder {
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
-  padding: 2%;
   font-family: "Teko", sans-serif;
+  align-items: center;
 }
 
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
 .movieGallery {
   display: flex;
   flex-wrap: wrap;
@@ -59,13 +68,24 @@ input::placeholder {
   align-items: center;
   justify-content: center;
   margin-right: auto;
-  gap: 30px 30px;
   margin-left: auto;
+  gap: 30px 30px;
+  margin-top: 4%;
   /* object-fit: contain; */
 }
 
 .paginationButtonContainer {
   display: flex;
-  width: 40vw;
+  width: 10vw;
   justify-content: space-between;
+}
+
+.roundButton {
+  border-radius: 30px;
+  border: none;
+  font-size: 2em;
+}
+.roundButton:hover {
+  cursor: pointer;
+  background-color: tomato;
 }

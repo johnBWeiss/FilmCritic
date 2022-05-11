@@ -1,7 +1,20 @@
 <div class="galleryCompContainer">
+
     <app-button text="search movies" color="tomato" (btnClick)="searchApi()"></app-button>
-    <input type="text" placeholder="search">
+    <div class="centerContent">
+        <input type="text" placeholder="search">
+        <!-- <p>{{inputSearch}}</p> -->
+    </div>
+    <div class=" paginationButtonContainer">
+        <button class="roundButton" (click)="moviePagination(false)">⇚</button>
+        <button class="roundButton" (click)="moviePagination(true)">⇛</button>
+        <!-- 
+    <app-button text="⇚" color="tomato" (click)="moviePagination(false)"></app-button>
+    <app-button text="⏩" color="tomato" (click)="moviePagination(true)"></app-button> -->
+    </div>
+
     <div class=" movieGallery">
+
         <div class="movieList" *ngFor="let movie of movies">
             <p>{{movie.rank}}</p>
             <p>{{movie.title}}</p>
@@ -13,8 +26,7 @@
 
             <!-- <p>{{movie.false? movie.id:" teritary works"}}</p> -->
         </div>
-        <div class=" paginationButtonContainer">
-            <app-button text="<" color="tomato" (click)="moviePagination(true,false)"></app-button>
-            <app-button text=">" color="tomato" (click)="moviePagination(false,true)"></app-button>
-        </div>
+
+
     </div>
+</div>
