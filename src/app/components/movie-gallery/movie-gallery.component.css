@@ -27,14 +27,14 @@
   background-color: black;
   align-items: center;
   text-align: center;
-  width: 24vw;
+  max-width: 16vw;
   display: flex;
   flex-direction: column;
 }
 
 img {
   border-radius: 30px;
-  width: 18vw;
+  width: 17vw;
   object-fit: contain;
 }
 
@@ -153,4 +153,13 @@ h6 {
   font-size: 0.4em;
   margin-bottom: 1.5%;
   margin-top: 1%;
+}
+
+.scrollUp {
+  margin: 5%;
+  width: 3vw;
+}
+
+.scrollUp::hover {
+  background-color: rgb(77, 23, 23);
 }

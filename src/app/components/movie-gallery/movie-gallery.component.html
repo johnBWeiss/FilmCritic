@@ -11,10 +11,11 @@
     </div>
     <div class=" paginationButtonContainer" *ngIf="showPagination">
         <!-- TODO-NGIF -->
-        <button class="roundButton" (click)="moviePagination(false)">⇚</button>
+        <button class="roundButton" (click)="moviePagination(false)">❮</button>
         <input class="pageDisplayInput" [ngModel]="itemsOnDisplay" type="text"
             (ngModelChange)="itemsOnDisplay = $event">
-        <button class="roundButton" (click)="moviePagination(true)">⇛</button>
+        <button class="roundButton" (click)="moviePagination(true)">❯
+        </button>
     </div>
     <div class="movieGallery">
         <div class="movieList" *ngFor="let movie of movies">
@@ -34,10 +35,6 @@
             </button>
         </div>
     </div>
-    <div class="paginationButtonContainer">
-        <button class="roundButton" (click)="moviePagination(false)">⇚</button>
-        <button class="roundButton" (click)="moviePagination(true)">⇛</button>
-
-    </div>
+    <button class="scrollUp roundButton" (click)="scrollUp()">▲</button>
 
 </div>

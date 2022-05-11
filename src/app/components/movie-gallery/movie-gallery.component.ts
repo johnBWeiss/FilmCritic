@@ -103,6 +103,10 @@ export class MovieGalleryComponent implements OnInit {
   }
   ngOnInit(): void {}
 
+  scrollUp() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   showInput() {
     this.displayInput = !this.displayInput;
   }
