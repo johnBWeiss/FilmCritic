@@ -10,4 +10,5 @@
 
 .searchButton:hover {
   cursor: pointer;
+  background-color: white;
 }

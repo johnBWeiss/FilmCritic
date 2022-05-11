@@ -8,12 +8,11 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class movieService {
   popularMovies: [] | undefined;
-  apiKey = 'k_6223cae4'; //TODO env
   constructor(private http: HttpClient) {}
 
-  getOneMovie(): Observable<[]> {
+  getOneMovie(searchWord: any): Observable<[]> {
     return this.http.get<[]>(
-      'https://imdb-api.com/en/API/SearchMovie/k_6223cae4/inception%202010',
+      `  https://imdb-api.com/en/API/SearchMovie/k_6223cae4/${searchWord}`,
       {
         observe: 'body',
         responseType: 'json',
@@ -25,14 +24,10 @@ export class movieService {
   }
 
   getPopularMovies(): Observable<[]> {
-    return this.http.get<[]>(
-      'https://imdb-api.com/en/API/MostPopularMovies/k_6223cae4',
-      {
-        observe: 'body',
-        responseType: 'json',
-        //   headers: new HttpHeaders().set('JsonOdds-API-Key', this.apiKey),
-      }
-    );
+    return this.http.get<[]>('http://localhost:5000/popular', {
+      observe: 'body',
+      //   headers: new HttpHeaders().set('JsonOdds-API-Key', this.apiKey),
+    });
     //   .subscribe((data) => this.popularMovies?.push(data));
     // this.popularMovies.push(popularMovieResults);
   }

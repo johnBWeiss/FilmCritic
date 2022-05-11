@@ -7,6 +7,9 @@ import { movieService } from 'src/app/services/movie-items.service';
 })
 export class MovieGalleryComponent implements OnInit {
   atEnd: boolean = false;
+  showPagination: boolean = false;
+  searchWord: string = '';
+  displayInput = false;
   itemsOnDisplay: number = 10;
   pageCounter: number = 1;
   rawMovieData: any = [];
@@ -89,45 +92,6 @@ export class MovieGalleryComponent implements OnInit {
       imDbRating: '8.8',
       imDbRatingCount: '37076',
     },
-    {
-      id: 'tt10886166',
-      rank: '7',
-      rankUpDown: '+2',
-      title: '365 Days',
-      fullTitle: '365 Days (2020)',
-      year: '2020',
-      image:
-        'https://imdb-api.com/images/original/MV5BMDdhYzNkOWQtYWNlNi00NDdjLWJlZDMtMjJjZDYyNjAxM2U1XkEyXkFqcGdeQXVyMTQyMTMwOTk0._V1_Ratio0.7313_AL_.jpg',
-      crew: 'Barbara Bialowas (dir.), Anna-Maria Sieklucka, Michele Morrone',
-      imDbRating: '3.3',
-      imDbRatingCount: '80004',
-    },
-    {
-      id: 'tt8115900',
-      rank: '8',
-      rankUpDown: '+8',
-      title: 'The Bad Guys',
-      fullTitle: 'The Bad Guys (2022)',
-      year: '2022',
-      image:
-        'https://imdb-api.com/images/original/MV5BMDhkYmU0MzctMWEzNy00ODg1LWI3ZjAtMGZlZjkzNWVmMzVjXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_Ratio0.6716_AL_.jpg',
-      crew: 'Pierre Perifel (dir.), Sam Rockwell, Marc Maron',
-      imDbRating: '6.9',
-      imDbRatingCount: '10673',
-    },
-    {
-      id: 'tt13560574',
-      rank: '9',
-      rankUpDown: '+1',
-      title: 'X',
-      fullTitle: 'X (2022)',
-      year: '2022',
-      image:
-        'https://imdb-api.com/images/original/MV5BMTJiMmE5YWItOWZjYS00YTg0LWE0MTYtMzg2ZTY4YjNkNDEzXkEyXkFqcGdeQXVyMTAzMDg4NzU0._V1_Ratio0.7910_AL_.jpg',
-      crew: 'Ti West (dir.), Mia Goth, Jenna Ortega',
-      imDbRating: '6.7',
-      imDbRatingCount: '35055',
-    },
   ];
   results: boolean = true;
   moreDetails: boolean = false;
@@ -138,6 +102,11 @@ export class MovieGalleryComponent implements OnInit {
     // this.search = 'two way Binding';
   }
   ngOnInit(): void {}
+
+  showInput() {
+    this.displayInput = !this.displayInput;
+  }
+
   moreMovieDetails(id: number) {
     if (this.selectedID.includes(id)) {
       this.selectedID = this.selectedID.map((v: any) => {
@@ -153,15 +122,18 @@ export class MovieGalleryComponent implements OnInit {
   searchApi() {
     this.movies = this.movieData.getPopularMovies().subscribe((data: any) => {
       this.rawMovieData = data;
+      this.showPagination = true;
       this.movies = this.rawMovieData.items.slice(0, this.itemsOnDisplay);
     });
   }
 
   searchOneMovie() {
-    this.movies = this.movieData.getOneMovie().subscribe((data: any) => {
-      console.log(data);
-      this.movies = data.results;
-    });
+    this.movies = this.movieData
+      .getOneMovie(this.searchWord)
+      .subscribe((data: any) => {
+        console.log(data);
+        this.movies = data.results;
+      });
   }
 
   moviePagination(forth: boolean) {

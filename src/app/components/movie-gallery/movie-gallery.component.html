@@ -1,54 +1,43 @@
 <div class="galleryCompContainer">
-    <app-button text="specific movie" color="tomato" (btnClick)="searchOneMovie()"></app-button>
-
-
-    <div class="testModal" *ngIf="moreDetails">
-        <h1>hi</h1>
+    <div class='flexRowSearch'>
+        <app-button text="popular movies" color="tomato" (btnClick)="searchApi()"></app-button>
+        <app-button text="search for your favorite" color="tomato" (btnClick)="showInput()"></app-button>
     </div>
-    <app-button text="popular movies" color="tomato" (btnClick)="searchApi()"></app-button>
 
-    <div class="centerContent">
-        <input type="text" placeholder="search">
-        <!-- <p>{{inputSearch}}</p> -->
+    <div class="flexRow" *ngIf="displayInput">
+        <input class="searchInput" placeholder="type and press enter" [ngModel]="searchWord" type="text"
+            (ngModelChange)="searchWord = $event" (keyup.enter)="searchOneMovie()">
+
     </div>
-    <div class=" paginationButtonContainer">
+    <div class=" paginationButtonContainer" *ngIf="showPagination">
+        <!-- TODO-NGIF -->
         <button class="roundButton" (click)="moviePagination(false)">⇚</button>
+        <input class="pageDisplayInput" [ngModel]="itemsOnDisplay" type="text"
+            (ngModelChange)="itemsOnDisplay = $event">
         <button class="roundButton" (click)="moviePagination(true)">⇛</button>
-
     </div>
-
-    <div class=" movieGallery">
-
+    <div class="movieGallery">
         <div class="movieList" *ngFor="let movie of movies">
             <p>{{movie.title}}</p>
-            <!-- <p>{{movie.description}}</p> -->
             <img src={{movie.image}}>
             <p> {{movie.imDbRating? 'imDb rating: '+movie.imDbRating:'' }}</p>
-
             <div *ngIf="selectedID.includes(movie.id)" class="modalContainer ">
 
                 <h6> {{movie.crew?'crew: '+ movie.crew :''}}</h6>
-                <h6>
-
-                    {{movie.year? 'year: '+movie.year:'' }}
-                </h6>
-                <h6>{{movie.rank? 'movie rank: '+movie.rank:'' }}
-                </h6>
-                <p> {{movie.description? 'description: '+movie.description:'' }}</p>
+                <h6>{{movie.year? 'year: '+movie.year:'' }}</h6>
+                <h6>{{movie.rank? 'movie rank: '+movie.rank:'' }}</h6>
+                <h6> {{movie.description? 'description: '+movie.description:'' }}</h6>
 
             </div>
             <button class="roundButton displayDetails"
                 (click)="moreMovieDetails(movie.id)">{{selectedID.includes(movie.id)?'less':'more'}}
             </button>
-            <!-- <p>{{movie.false? movie.id:" teritary works"}}</p> -->
         </div>
-
-
-
     </div>
-    <div class=" paginationButtonContainer">
+    <div class="paginationButtonContainer">
         <button class="roundButton" (click)="moviePagination(false)">⇚</button>
         <button class="roundButton" (click)="moviePagination(true)">⇛</button>
 
     </div>
+
 </div>
