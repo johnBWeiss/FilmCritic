@@ -11,6 +11,19 @@ export class movieService {
   apiKey = 'k_6223cae4'; //TODO env
   constructor(private http: HttpClient) {}
 
+  getOneMovie(): Observable<[]> {
+    return this.http.get<[]>(
+      'https://imdb-api.com/en/API/SearchMovie/k_6223cae4/inception%202010',
+      {
+        observe: 'body',
+        responseType: 'json',
+        //   headers: new HttpHeaders().set('JsonOdds-API-Key', this.apiKey),
+      }
+    );
+    //   .subscribe((data) => this.popularMovies?.push(data));
+    // this.popularMovies.push(popularMovieResults);
+  }
+
   getPopularMovies(): Observable<[]> {
     return this.http.get<[]>(
       'https://imdb-api.com/en/API/MostPopularMovies/k_6223cae4',

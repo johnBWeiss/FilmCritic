@@ -1,3 +1,7 @@
+* {
+  font-family: "Teko", sans-serif;
+}
+
 .centerContent {
   display: flex;
   justify-content: center;
@@ -12,10 +16,13 @@
   font-size: 3em;
   color: rgb(255, 255, 255);
   border-radius: 40px;
-  padding: 1%;
+  padding: 2%;
   background-color: black;
   align-items: center;
   text-align: center;
+  max-width: 45vw;
+  display: flex;
+  flex-direction: column;
 }
 
 p {
@@ -31,7 +38,7 @@ p {
 
 img {
   border-radius: 30px;
-  width: 20vw;
+  width: 35vw;
   object-fit: contain;
 }
 
@@ -55,7 +62,6 @@ input {
 input::placeholder {
   font-size: 1.5em;
   text-align: center;
-  font-family: "Teko", sans-serif;
   align-items: center;
 }
 
@@ -65,7 +71,7 @@ input:focus::-webkit-input-placeholder {
 .movieGallery {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 90%;
   align-items: center;
   justify-content: center;
   margin-right: auto;
@@ -89,4 +95,19 @@ input:focus::-webkit-input-placeholder {
 .roundButton:hover {
   cursor: pointer;
   background-color: tomato;
+}
+
+.displayDetails {
+  font-size: 0.3em;
+  background-color: rgb(77, 23, 23);
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+h6 {
+  font-size: 0.4em;
 }
