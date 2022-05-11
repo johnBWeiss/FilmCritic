@@ -2,7 +2,8 @@
     <app-button text="search movies" color="tomato" (btnClick)="searchApi()"></app-button>
     <input type="text" placeholder="search">
     <div class=" movieGallery">
-        <div class="movieList" *ngFor="let movie of movies.items">
+        <div class="movieList" *ngFor="let movie of movies">
+            <p>{{movie.rank}}</p>
             <p>{{movie.title}}</p>
             <!-- <p>{{movie.description}}</p> -->
 
@@ -10,6 +11,10 @@
             <img src={{movie.image}}>
             <p>imDb rating: {{movie.imDbRating}}</p>
 
-            <!-- <p>{{movie.false? movie.id:"teritary works"}}</p> -->
+            <!-- <p>{{movie.false? movie.id:" teritary works"}}</p> -->
+        </div>
+        <div class=" paginationButtonContainer">
+            <app-button text="<" color="tomato" (click)="moviePagination(true,false)"></app-button>
+            <app-button text=">" color="tomato" (click)="moviePagination(false,true)"></app-button>
         </div>
     </div>

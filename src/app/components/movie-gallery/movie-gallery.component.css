@@ -63,3 +63,9 @@ input::placeholder {
   margin-left: auto;
   /* object-fit: contain; */
 }
+
+.paginationButtonContainer {
+  display: flex;
+  width: 40vw;
+  justify-content: space-between;
+}
