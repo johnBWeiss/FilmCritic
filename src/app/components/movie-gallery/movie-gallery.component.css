@@ -39,6 +39,7 @@
   align-items: center;
   text-align: center;
   width: 23vw;
+  /* height: 850px; */
   display: flex;
   flex-direction: column;
 }
@@ -173,7 +174,29 @@ h6 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-top: 4%;
+  height: 200px;
+  animation-name: modalGrow;
+  animation-duration: 3.1s;
+  animation-direction: linear;
+  animation-fill-mode: forwards;
 }
+
+/* @keyframes modalGrow {
+  0% {
+    visibility: hidden;
+  }
+
+  99% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
+    height: 200px;
+    opacity: 1;
+  }
+} */
 
 .scrollUp {
   margin-top: 5%;
@@ -182,9 +205,26 @@ h6 {
   margin-left: auto;
 }
 
-/* .scrollUp::hover {
-  background-color: rgb(77, 23, 23);
-} */
+.closeImgContainer {
+  animation-name: imgGrow;
+  animation-duration: 0.4s;
+  animation-direction: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes imgGrow {
+  0% {
+    height: 470px;
+
+    object-fit: cover;
+  }
+
+  100% {
+    height: 455px;
+
+    object-fit: cover;
+  }
+}
 
 @media only screen and (max-width: 1479px) {
   p {
@@ -250,9 +290,6 @@ h6 {
 @media only screen and (max-width: 1040px) {
   .paginationButtonContainer {
     width: 27vw;
-  }
-
-  .paginationButtonContainer {
     margin-top: 10%;
   }
 
