@@ -17,6 +17,8 @@
         </button>
     </div>
     <div class="movieGallery">
+        <img class='spinner' src="../../../assets/spinners/spinnerYellow.gif" *ngIf="showSpinner">
+        <div class="errorHandler" *ngIf="errorModal">sorry, something went wrong</div>
         <div class="movieList" *ngFor="let movie of movies">
             <p class="movieTitle">{{movie.title}}</p>
             <img src={{movie.image}}>
@@ -34,6 +36,6 @@
             </button>
         </div>
     </div>
-    <button class="scrollUp roundButton" (click)="scrollUp()">▲</button>
+    <button *ngIf="showPagination" class="scrollUp roundButton" (click)="scrollUp()">▲</button>
 
 </div>

@@ -1,6 +1,17 @@
 * {
   font-family: "Teko", sans-serif;
 }
+
+.errorHandler {
+  font-size: 3em;
+  color: red;
+  text-align: center;
+}
+
+.spinner {
+  width: 10vw;
+  margin-top: 6%;
+}
 .flexColumn {
   display: flex;
   justify-content: center;

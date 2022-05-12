@@ -11,14 +11,11 @@ export class movieService {
   constructor(private http: HttpClient) {}
 
   getOneMovie(searchWord: any): Observable<[]> {
-    return this.http.get<[]>(
-      `  https://imdb-api.com/en/API/SearchMovie/k_6223cae4/${searchWord}`,
-      {
-        observe: 'body',
-        responseType: 'json',
-        //   headers: new HttpHeaders().set('JsonOdds-API-Key', this.apiKey),
-      }
-    );
+    return this.http.get<[]>(`  http://localhost:5000/${searchWord}`, {
+      observe: 'body',
+      // responseType: 'json',
+      //   headers: new HttpHeaders().set('JsonOdds-API-Key', this.apiKey),
+    });
     //   .subscribe((data) => this.popularMovies?.push(data));
     // this.popularMovies.push(popularMovieResults);
   }

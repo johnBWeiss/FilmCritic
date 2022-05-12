@@ -29,7 +29,6 @@
 
 @media only screen and (max-width: 498px) {
   .searchbutton {
-    width: 35vw;
     font-size: 1em;
   }
 }
