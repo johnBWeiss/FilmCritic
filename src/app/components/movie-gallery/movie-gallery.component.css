@@ -9,7 +9,7 @@
 }
 
 .flexRowSearch {
-  width: 33vw;
+  width: 50vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,26 +27,37 @@
   background-color: black;
   align-items: center;
   text-align: center;
-  max-width: 16vw;
+  width: 23vw;
   display: flex;
   flex-direction: column;
 }
 
 img {
   border-radius: 30px;
-  width: 17vw;
+  width: 23vw;
   object-fit: contain;
 }
 
 p {
   padding: 1%;
   margin: 0%;
-  font-size: 0.5em;
+  font-size: 0.55em;
   max-width: 20vw;
   height: 11vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+h6 {
+  font-size: 0.5em;
+  margin-bottom: 1.5%;
+  margin-top: 1%;
+}
+
+.movieTitle {
+  font-size: 0.7em;
+  margin-bottom: 4%;
 }
 
 .galleryCompContainer {
@@ -55,17 +66,6 @@ p {
   align-items: center;
   flex-direction: column;
   margin-top: 4%;
-}
-
-.pageDisplayInput {
-  width: 3vw;
-  border-radius: 30px;
-  text-align: center;
-  font-size: 2em;
-}
-
-.pageDisplayInput:focus {
-  outline: none;
 }
 
 .movieGallery {
@@ -81,10 +81,37 @@ p {
 }
 
 .paginationButtonContainer {
-  margin-top: 7%;
+  margin-top: 3%;
   display: flex;
   width: 15vw;
   justify-content: space-between;
+}
+
+.roundButton {
+  border-radius: 30px;
+  width: 26%;
+  background-color: rgb(0, 0, 0);
+  border: none;
+  font-size: 2.5em;
+  color: white;
+  box-shadow: 1px 1px 3px -2px rgb(0 0 0 / 20%),
+    1px 1px 1px 1px rgb(0 0 0 / 14%), 1px 1px 5px 1px rgb(0 0 0 / 12%);
+}
+.roundButton:hover {
+  cursor: pointer;
+  background-color: tomato;
+}
+
+.pageDisplayInput {
+  width: 26%;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 2.5em;
+  border: white;
+}
+
+.pageDisplayInput:focus {
+  outline: none;
 }
 
 .searchInput {
@@ -93,7 +120,7 @@ p {
   min-width: 35vw;
   border-radius: 40px;
   border: hidden;
-  margin-bottom: 5%;
+  margin-bottom: 0%;
   padding: 2%;
   text-align: center;
   font-size: 1.8em;
@@ -109,18 +136,6 @@ p {
 
 .searchInput:focus {
   outline: none;
-}
-
-.roundButton {
-  border-radius: 30px;
-  border: none;
-  font-size: 2em;
-  box-shadow: 1px 1px 3px -2px rgb(0 0 0 / 20%),
-    1px 1px 1px 1px rgb(0 0 0 / 14%), 1px 1px 5px 1px rgb(0 0 0 / 12%);
-}
-.roundButton:hover {
-  cursor: pointer;
-  background-color: tomato;
 }
 
 .searchButton {
@@ -149,17 +164,206 @@ p {
   flex-wrap: wrap;
 }
 
-h6 {
-  font-size: 0.4em;
-  margin-bottom: 1.5%;
-  margin-top: 1%;
-}
-
 .scrollUp {
   margin: 5%;
-  width: 3vw;
 }
 
-.scrollUp::hover {
+/* .scrollUp::hover {
   background-color: rgb(77, 23, 23);
+} */
+
+@media only screen and (max-width: 1479px) {
+  p {
+    max-width: 29vw;
+  }
+}
+
+@media only screen and (max-width: 1424px) {
+  .flexRowSearch {
+    font-size: 1em;
+    width: 55vw;
+  }
+
+  .paginationButtonContainer {
+    width: 19vw;
+  }
+
+  .scrollUp {
+    width: 8vw;
+  }
+
+  .movieList {
+    width: 35vw;
+  }
+
+  img {
+    width: 33vw;
+  }
+
+  p {
+    max-width: 30vw;
+  }
+
+  .movieTitle {
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width: 1213px) {
+  .scrollUp {
+    width: 8vw;
+  }
+  .paginationButtonContainer {
+    width: 22vw;
+  }
+  .movieTitle {
+    font-size: 0.7em;
+  }
+
+  .movieList {
+    width: 35vw;
+  }
+
+  img {
+    width: 33vw;
+  }
+}
+
+@media only screen and (max-width: 1040px) {
+  .paginationButtonContainer {
+    width: 27vw;
+  }
+
+  .paginationButtonContainer {
+    margin-top: 10%;
+  }
+
+  p {
+    max-width: 70vw;
+    font-size: 1.1em;
+  }
+
+  .movieTitle {
+    font-size: 1.1em;
+    padding-top: 5%;
+  }
+
+  .movieList {
+    width: 75vw;
+  }
+
+  img {
+    width: 74vw;
+  }
+
+  .searchInput {
+    width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .scrollUp {
+    width: 8vw;
+  }
+  .paginationButtonContainer {
+    width: 30vw;
+  }
+
+  .flexRowSearch {
+    width: 75vw;
+  }
+}
+
+@media only screen and (max-width: 752px) {
+  .scrollUp {
+    width: 8vw;
+  }
+  .paginationButtonContainer {
+    width: 35vw;
+  }
+
+  p {
+    max-width: 70vw;
+    font-size: 0.8em;
+  }
+
+  .movieTitle {
+    font-size: 0.8em;
+    padding-top: 5%;
+  }
+
+  img {
+    width: 67vw;
+  }
+}
+
+@media only screen and (max-width: 652px) {
+  .paginationButtonContainer {
+    width: 38vw;
+    font-size: 0.8em;
+  }
+
+  .searchInput {
+    width: 57vw;
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.7em;
+  }
+
+  .movieTitle {
+    font-size: 0.7em;
+    padding-top: 5%;
+  }
+
+  .movieGallery {
+    margin-top: 9%;
+  }
+}
+
+@media only screen and (max-width: 582px) {
+  .paginationButtonContainer {
+    width: 46vw;
+  }
+}
+
+@media only screen and (max-width: 498px) {
+  .paginationButtonContainer {
+    width: 48vw;
+    font-size: 0.7em;
+  }
+  .movieTitle,
+  p {
+    font-size: 0.6em;
+  }
+  .searchInput {
+    width: 57vw;
+    font-size: 1em;
+  }
+  .searchInput::placeholder {
+    font-size: 0.7em;
+  }
+}
+@media only screen and (max-width: 414px) {
+  .paginationButtonContainer {
+    width: 54vw;
+  }
+
+  p,
+  .movieTitle {
+    font-size: 0.5em;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .paginationButtonContainer {
+    width: 59vw;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .paginationButtonContainer {
+    width: 60vw;
+  }
 }

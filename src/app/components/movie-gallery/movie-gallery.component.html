@@ -1,7 +1,7 @@
 <div class="galleryCompContainer">
     <div class='flexRowSearch'>
         <app-button text="popular movies" color="tomato" (btnClick)="searchApi()"></app-button>
-        <app-button text="search for your favorite" color="tomato" (btnClick)="showInput()"></app-button>
+        <app-button text="search favorite" color="tomato" (btnClick)="showInput()"></app-button>
     </div>
 
     <div class="flexRow" *ngIf="displayInput">
@@ -9,8 +9,7 @@
             (ngModelChange)="searchWord = $event" (keyup.enter)="searchOneMovie()">
 
     </div>
-    <div class=" paginationButtonContainer" *ngIf="showPagination">
-        <!-- TODO-NGIF -->
+    <div class="paginationButtonContainer" *ngIf="showPagination">
         <button class="roundButton" (click)="moviePagination(false)">❮</button>
         <input class="pageDisplayInput" [ngModel]="itemsOnDisplay" type="text"
             (ngModelChange)="itemsOnDisplay = $event">
@@ -19,7 +18,7 @@
     </div>
     <div class="movieGallery">
         <div class="movieList" *ngFor="let movie of movies">
-            <p>{{movie.title}}</p>
+            <p class="movieTitle">{{movie.title}}</p>
             <img src={{movie.image}}>
             <p> {{movie.imDbRating? 'imDb rating: '+movie.imDbRating:'' }}</p>
             <div *ngIf="selectedID.includes(movie.id)" class="modalContainer ">
