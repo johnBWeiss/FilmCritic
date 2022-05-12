@@ -154,7 +154,7 @@ h6 {
   color: white;
   margin-top: 2%;
   padding: 1%;
-  width: 5vw;
+  width: 8vw;
   background-color: rgb(77, 23, 23);
 }
 
@@ -165,7 +165,10 @@ h6 {
 }
 
 .scrollUp {
-  margin: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* .scrollUp::hover {
@@ -185,7 +188,7 @@ h6 {
   }
 
   .paginationButtonContainer {
-    width: 19vw;
+    width: 20vw;
   }
 
   .scrollUp {
@@ -227,6 +230,10 @@ h6 {
   img {
     width: 33vw;
   }
+
+  .displayDetails {
+    width: 10vw;
+  }
 }
 
 @media only screen and (max-width: 1040px) {
@@ -258,6 +265,11 @@ h6 {
 
   .searchInput {
     width: 50vw;
+  }
+
+  .displayDetails {
+    width: 14vw;
+    margin-bottom: 3%;
   }
 }
 
@@ -295,6 +307,10 @@ h6 {
   img {
     width: 67vw;
   }
+
+  .scrollUp {
+    width: 10vw;
+  }
 }
 
 @media only screen and (max-width: 652px) {
@@ -319,6 +335,14 @@ h6 {
 
   .movieGallery {
     margin-top: 9%;
+  }
+
+  .scrollUp {
+    width: 12vw;
+  }
+
+  .displayDetails {
+    width: 21vw;
   }
 }
 
