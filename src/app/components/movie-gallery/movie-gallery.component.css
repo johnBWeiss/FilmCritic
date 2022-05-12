@@ -39,7 +39,6 @@
   align-items: center;
   text-align: center;
   width: 23vw;
-  /* height: 850px; */
   display: flex;
   flex-direction: column;
 }
@@ -161,6 +160,13 @@ h6 {
   background-color: tomato;
 }
 
+.scrollUp {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .displayDetails {
   font-size: 0.4em;
   color: white;
@@ -175,55 +181,12 @@ h6 {
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 4%;
-  height: 200px;
-  animation-name: modalGrow;
-  animation-duration: 3.1s;
-  animation-direction: linear;
-  animation-fill-mode: forwards;
-}
-
-/* @keyframes modalGrow {
-  0% {
-    visibility: hidden;
-  }
-
-  99% {
-    visibility: hidden;
-  }
-
-  100% {
-    visibility: visible;
-    height: 200px;
-    opacity: 1;
-  }
-} */
-
-.scrollUp {
-  margin-top: 5%;
-  margin-bottom: 5%;
-  margin-right: auto;
-  margin-left: auto;
+  height: 188px;
 }
 
 .closeImgContainer {
-  animation-name: imgGrow;
-  animation-duration: 0.4s;
-  animation-direction: linear;
-  animation-fill-mode: forwards;
-}
-
-@keyframes imgGrow {
-  0% {
-    height: 470px;
-
-    object-fit: cover;
-  }
-
-  100% {
-    height: 455px;
-
-    object-fit: cover;
-  }
+  height: 460px;
+  object-fit: cover;
 }
 
 @media only screen and (max-width: 1479px) {
@@ -264,6 +227,14 @@ h6 {
 }
 
 @media only screen and (max-width: 1213px) {
+  .modalContainer {
+    height: 190px;
+  }
+
+  .closeImgContainer {
+    height: 360px;
+  }
+
   .scrollUp {
     width: 8vw;
   }
@@ -288,6 +259,18 @@ h6 {
 }
 
 @media only screen and (max-width: 1040px) {
+  .modalContainer {
+    height: 300px;
+  }
+
+  .closeImgContainer {
+    height: 700px;
+  }
+
+  h6 {
+    font-size: 0.8em;
+  }
+
   .paginationButtonContainer {
     width: 27vw;
     margin-top: 10%;
@@ -322,6 +305,18 @@ h6 {
 }
 
 @media only screen and (max-width: 840px) {
+  .modalContainer {
+    height: 300px;
+  }
+
+  .closeImgContainer {
+    height: 550px;
+  }
+
+  h6 {
+    font-size: 0.8em;
+  }
+
   .scrollUp {
     width: 8vw;
   }
@@ -335,6 +330,14 @@ h6 {
 }
 
 @media only screen and (max-width: 752px) {
+  .modalContainer {
+    height: 300px;
+  }
+
+  .closeImgContainer {
+    height: 420px;
+  }
+
   .scrollUp {
     width: 8vw;
   }
@@ -362,6 +365,18 @@ h6 {
 }
 
 @media only screen and (max-width: 652px) {
+  .modalContainer {
+    height: 170px;
+  }
+
+  .closeImgContainer {
+    height: 380px;
+  }
+
+  h6 {
+    font-size: 0.45em;
+  }
+
   .paginationButtonContainer {
     width: 38vw;
     font-size: 0.8em;
@@ -395,12 +410,28 @@ h6 {
 }
 
 @media only screen and (max-width: 582px) {
+  .modalContainer {
+    height: 230px;
+  }
+
+  .closeImgContainer {
+    height: 325px;
+  }
+
   .paginationButtonContainer {
     width: 46vw;
   }
 }
 
 @media only screen and (max-width: 498px) {
+  .modalContainer {
+    height: 200px;
+  }
+
+  .closeImgContainer {
+    height: 280px;
+  }
+
   .paginationButtonContainer {
     width: 48vw;
     font-size: 0.7em;
@@ -418,6 +449,18 @@ h6 {
   }
 }
 @media only screen and (max-width: 414px) {
+  .modalContainer {
+    height: 150px;
+  }
+
+  .closeImgContainer {
+    height: 250px;
+  }
+
+  h6 {
+    font-size: 0.35em;
+  }
+
   .paginationButtonContainer {
     width: 54vw;
   }
@@ -434,8 +477,30 @@ h6 {
   }
 }
 
+@media only screen and (max-width: 356px) {
+  .modalContainer {
+    height: 191px;
+  }
+
+  .closeImgContainer {
+    height: 190px;
+  }
+}
+
 @media only screen and (max-width: 350px) {
   .paginationButtonContainer {
     width: 60vw;
+  }
+
+  .modalContainer {
+    height: 130px;
+  }
+
+  .closeImgContainer {
+    height: 180px;
+  }
+
+  h6 {
+    font-size: 0.3em;
   }
 }
