@@ -3,43 +3,39 @@
         <app-button text="popular movies" color="tomato" (btnClick)="searchApi()"></app-button>
         <app-button text="search favorite" color="tomato" (btnClick)="showInput()"></app-button>
     </div>
-
     <div class="flexRow" *ngIf="displayInput">
         <input class="searchInput" placeholder="type and press enter" [ngModel]="searchWord" type="text"
             (ngModelChange)="searchWord = $event" (keyup.enter)="searchOneMovie()">
-
     </div>
     <div class="paginationButtonContainer" *ngIf="showPagination">
         <button class="roundButton" (click)="moviePagination(false)">❮</button>
-        <input class="pageDisplayInput" [ngModel]="itemsOnDisplay" type="text"
-            (ngModelChange)="itemsOnDisplay = $event">
 
-        <button class="roundButton" (click)="moviePagination(true)">❯
-        </button>
+        <!-- this input class allows the user to enter the amount of results rendered.
+             disabled as not part of the required specificiation -->
 
+        <!-- <input class="pageDisplayInput" [ngModel]="itemsOnDisplay" type="text"
+            (ngModelChange)="itemsOnDisplay = $event"> -->
+
+        <button class="roundButton" (click)="moviePagination(true)">❯</button>
     </div>
     <img class='spinner' src="../../../assets/spinners/spinnerYellow.gif" *ngIf="showSpinner">
-
+    <div class="errorHandler" *ngIf="errorModal">sorry, something went wrong</div>
     <div class="movieGallery" *ngIf="isLoaded">
-        <div class="errorHandler" *ngIf="errorModal">sorry, something went wrong</div>
         <div class="movieList" *ngFor="let movie of movies">
             <p class="movieTitle">{{movie.title}}</p>
             <img src={{movie.image}} class="{{selectedID.includes(movie.id)?'closeImgContainer':'openImgContainer'}}">
             <p> {{movie.imDbRating? 'imDb rating: '+movie.imDbRating:'' }}</p>
             <div *ngIf="selectedID.includes(movie.id)"
                 class="{{selectedID.includes(movie.id)?'modalContainer':'closeModalContainer'}}">
-
                 <h6> {{movie.crew?'crew: '+ movie.crew :''}}</h6>
                 <h6>{{movie.year? 'year: '+movie.year:'' }}</h6>
                 <h6>{{movie.rank? 'movie rank: '+movie.rank:'' }}</h6>
                 <h6> {{movie.description? 'description: '+movie.description:'' }}</h6>
-
             </div>
             <button class="roundButton displayDetails"
                 (click)="moreMovieDetails(movie.id)">{{selectedID.includes(movie.id)?'less':'more'}}
             </button>
-
         </div>
         <button *ngIf="showPagination" class="scrollUp roundButton" (click)="scrollUp()">▲</button>
-
     </div>
+</div>

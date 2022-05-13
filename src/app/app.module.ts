@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MovieGalleryComponent } from './components/movie-gallery/movie-gallery.component';
 import { ButtonComponent } from './components/button/button.component';
-import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     MovieGalleryComponent,
     ButtonComponent,
-    MovieItemComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,16 +3,17 @@
   border: 0ch;
   padding: 3%;
   width: 22vw;
-  background-color: yellow;
+  background-color: rgb(41, 5, 5);
   font-size: 1.5em;
   font-family: "Teko", sans-serif;
+  color: rgb(255, 255, 255);
+  box-shadow: 0px 1.5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .searchButton:hover {
   cursor: pointer;
   background-color: black;
   color: white;
-  opacity: 0.8;
 }
 
 @media only screen and (max-width: 1424px) {
