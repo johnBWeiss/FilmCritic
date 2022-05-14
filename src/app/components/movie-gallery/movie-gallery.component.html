@@ -9,7 +9,7 @@
     </div>
     <div class="paginationButtonContainer" *ngIf="showPagination">
         <button class="roundButton" (click)="moviePagination(false)">❮</button>
-
+        <div class="pageDisplayInput">{{pageCounter}}</div>
         <!-- this input class allows the user to enter the amount of results rendered.
              disabled as not part of the required specificiation -->
 
