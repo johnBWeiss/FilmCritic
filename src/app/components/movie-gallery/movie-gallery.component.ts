@@ -30,6 +30,7 @@ export class MovieGalleryComponent implements OnInit {
   ngOnInit(): void {}
 
   resetScreenForNewApiCall() {
+    this.pageCounter = 1;
     this.isLoaded = false;
     this.showPagination = false;
     this.displayInput = false;
@@ -90,7 +91,6 @@ export class MovieGalleryComponent implements OnInit {
 
   searchOneMovie() {
     this.resetScreenForNewApiCall();
-
     this.movies = this.movieData.getOneMovie(this.searchWord).subscribe(
       (data: any) => {
         this.apiCallRecieved();
