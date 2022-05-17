@@ -144,8 +144,10 @@ export class MovieGalleryComponent implements OnInit {
   pageSlicer() {
     this.formerItemsOnDisplay = Number(this.formerItemsOnDisplay);
     this.itemsOnDisplay = Number(this.itemsOnDisplay);
+
     let basePage =
       this.pageCounter * this.formerItemsOnDisplay - this.formerItemsOnDisplay;
+
     this.movies = this.rawMovieData.items.slice(
       basePage,
       basePage + this.itemsOnDisplay

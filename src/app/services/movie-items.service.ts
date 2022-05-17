@@ -10,14 +10,20 @@ export class movieService {
   constructor(private http: HttpClient) {}
 
   getOneMovie(searchWord: any): Observable<[]> {
-    return this.http.get<[]>(`http://localhost:5000/${searchWord}`, {
-      observe: 'body',
-    });
+    return this.http.get<[]>(
+      `https://imdb-api.com/en/API/SearchMovie/k_6223cae4/${searchWord}`,
+      {
+        observe: 'body',
+      }
+    );
   }
 
   getPopularMovies(): Observable<[]> {
-    return this.http.get<[]>('http://localhost:5000/popular', {
-      observe: 'body',
-    });
+    return this.http.get<[]>(
+      `https://imdb-api.com/en/API/MostPopularMovies/k_6223cae4`,
+      {
+        observe: 'body',
+      }
+    );
   }
 }
