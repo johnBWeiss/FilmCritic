@@ -1,4 +1,10 @@
-A minimalistic web app designed for searching the most popular movies listed in the imdb database. The app has an option to search for specific titles according to personal input as well
+A minimalistic web app designed for searching the most popular movies listed in the imdb database. The app has an option to search for specific titles according to personal input as well.
+
+Built with Angular,CSS.
+
+check out the site live here:
+
+https://cinema-yonatan-weiss.netlify.app/
 
 
 
